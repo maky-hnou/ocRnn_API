@@ -11,4 +11,4 @@ class ImageModel(models.Model):
     text = models.CharField(max_length=50, default='Undefined')
     processed = models.BooleanField(default=False)
     upload_date = models.DateField(default=datetime.date.today)
-    processing_time = models.CharField(max_length=15, default='0 secondes')
+    processing_time = models.CharField(max_length=15, default='0 seconds')
