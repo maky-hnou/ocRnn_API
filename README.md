@@ -86,7 +86,7 @@ You can filter the uploaded images by 'processed/not processed' or by upload dat
 
 **7. Demo:**  
 
-
+<a href="https://github.com/maky-hnou/ocRnn_API/blob/main/demo/demo.gif"><img src="https://github.com/maky-hnou/ocRnn_API/blob/main/demo/demo.gif" title="demo-gif"/></a>
 
 [python-version]:https://img.shields.io/badge/python-3.8+-brightgreen.svg
 [issues-image]:https://img.shields.io/github/issues/maky-hnou/ocRnn_API.svg
