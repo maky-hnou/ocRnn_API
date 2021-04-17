@@ -9,6 +9,10 @@ from ocRnn.core.decoders import CTCGreedyDecoder
 
 class CharRecognizer():
     def __init__(self, image_model):
+        tf_config = tf.compat.v1.ConfigProto()
+        tf_config.gpu_options.per_process_gpu_memory_fraction = 0.5
+        tf.compat.v1.keras.backend.set_session(
+            tf.compat.v1.Session(config=tf_config))
         self.image_model = image_model
         self.image = image_model.image
         self.model_path = 'ocRnn/core/model/saved_model.h5'
@@ -34,10 +38,6 @@ class CharRecognizer():
 
     def run(self):
         model = keras.models.load_model(self.model_path, compile=False)
-        tf_config = tf.compat.v1.ConfigProto()
-        tf_config.gpu_options.per_process_gpu_memory_fraction = 0.5
-        tf.compat.v1.keras.backend.set_session(
-            tf.compat.v1.Session(config=tf_config))
         config = self.load_configs(self.config_path)
         decoder = CTCGreedyDecoder(config['table_path'])
         start = time.time()
@@ -50,7 +50,7 @@ class CharRecognizer():
         processing_time = round(time.time() - start, 2)
         if not isinstance(outputs, tuple):
             outputs = decoder(outputs)
-        self.image_model.text = outputs[0].numpy()
+        self.image_model.text = outputs[0].numpy()[0].decode()
         self.image_model.processed = True
         self.image_model.processing_time = processing_time
         self.image_model.save()
