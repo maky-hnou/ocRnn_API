@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from Dog_Breed_Classifier.core.ocr import CharRecognizer
-from Dog_Breed_Classifier.models import ImageModel
+from ocRnn.core.ocr import CharRecognizer
+from ocRnn.models import ImageModel
 
 
 class Command(BaseCommand):
