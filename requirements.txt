@@ -17,6 +17,7 @@ google-auth==1.26.0
 google-auth-oauthlib==0.4.2
 google-pasta==0.2.0
 grpcio==1.35.0
+gunicorn==20.1.0
 h5py==2.10.0
 idna==2.10
 Keras-Preprocessing==1.1.2
@@ -44,7 +45,7 @@ sqlparse==0.4.1
 tensorboard==2.4.1
 tensorboard-plugin-wit==1.8.0
 tensorflow-estimator==2.3.0
-tensorflow-gpu==2.3.0
+tensorflow==2.3.0
 tensorflow-hub==0.11.0
 termcolor==1.1.0
 tqdm==4.56.1
